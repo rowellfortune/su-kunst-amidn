@@ -1,12 +1,16 @@
 {
-  "name": "@monorepo-template/functions",
+  "name": "@su-kunst-admin/functions",
   "version": "0.0.0",
   "type": "module",
   "dependencies": {
-    "@monorepo-template/core": "*",
-    "sst": "*"
+    "@aws-sdk/client-dynamodb": "^3.804.0",
+    "@aws-sdk/lib-dynamodb": "^3.804.0",
+    "@su-kunst-admin/core": "*",
+    "sst": "*",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8"
+    "@types/aws-lambda": "^8.10.149",
+    "@types/uuid": "^10.0.0"
   }
 }

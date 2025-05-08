@@ -1,7 +1,15 @@
 import { bucket } from "./storage";
 
-export const myApi = new sst.aws.Function("MyApi", {
-  url: true,
-  link: [bucket],
-  handler: "packages/functions/src/api.handler"
+// Create the API
+export const api = new sst.aws.ApiGatewayV2("Api", {
+  transform: {
+    route: {
+      handler: {
+        link:  [bucket],
+      },
+      args: {
+        auth: { iam: true }
+      },
+    }
+  }
 });
